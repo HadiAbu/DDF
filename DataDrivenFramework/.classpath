@@ -55,8 +55,9 @@
 	<classpathentry kind="lib" path="C:/Users/Galil1/Desktop/eclipse/tempGit/selenium-2.48.2/selenium-java-2.48.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Galil1/Desktop/eclipse/tempGit/selenium-2.48.2/selenium-java-2.48.2-srcs.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Galil1/Desktop/eclipse/tempGit/jars/Xmls Reader jars/dom4j-1.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Galil1/Desktop/eclipse/tempGit/jars/Xmls Reader jars/xmlbeans-2.3.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Galil1/Desktop/eclipse/tempGit/jars/Xmls Reader jars/poi-3.10-FINAL.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Galil1/Desktop/eclipse/tempGit/jars/Xmls Reader jars/poi-ooxml-3.5-FINAL.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Galil1/Desktop/eclipse/tempGit/jars/Xmls Reader jars/xmlbeans.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Galil1/Desktop/eclipse/tempGit/jars/Xmls Reader jars/poi-ooxml-schemas-3.8-beta3-20110606.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
