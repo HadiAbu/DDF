@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
@@ -15,8 +16,14 @@ import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.xssf.usermodel.*;
-
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFCreationHelper;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFHyperlink;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XLS_Reader {
 	private String path;
@@ -224,48 +231,8 @@ public class XLS_Reader {
 	}
 	// INFO: Customised for 3m project !!
 	// returns all excel sheet rows + sub-sheet rows if specified "Sheet Name : Column Name" in excel header.
-	/*
-	 * public Object[][] getAllRowsAsHashtableArray(String sheetName) {
-		int numOfRows = getRowCount(sheetName);
-		if (numOfRows <= 0)
-			return new Object[0][0];
-		List<Object> list = new ArrayList<Object>();
-		Hashtable<String, String> mainRowTable;
-		Hashtable<String, String> subRowTable = null;
-		Hashtable<String, String> newRowTable = new Hashtable<>();
+	
 
-		for (int i = 1; i < numOfRows; i++) {
-			mainRowTable = getRowAsHashtable(i, sheetName);
-			if (mainRowTable.get(ExcelDataProvider.getDependencyKey()) == null || mainRowTable.get(ExcelDataProvider.getDependencyKey()).equals(""))
-				mainRowTable.put(ExcelDataProvider.getDependencyKey(), "false");
-			if (mainRowTable.isEmpty())
-				continue;
-			for (Map.Entry<String, String> entry : mainRowTable.entrySet()) {
-				String[] subSheet = entry.getKey().split("\\s*:\\s*");
-				if (subSheet.length == 2) {
-					try {
-						subRowTable = getRowByValue(subSheet[1], entry.getValue(), subSheet[0]);
-					} catch (Exception e) {
-						System.out.println(i);
-					}
-
-					if (subRowTable != null)
-						newRowTable.putAll(subRowTable);
-				}
-			}
-			newRowTable.putAll(mainRowTable);
-			// added to not run disabled tests in Excel.
-			String needToRun = newRowTable.get(ExcelDataProvider.getNeedToRunKey());
-			if (needToRun == null || !needToRun.matches("(?i:\\s*(NO|FALSE)\\s*)"))
-				list.add(new Hashtable<>(newRowTable));
-		}
-		Object[][] table = new Object[list.size()][1];
-		int index = 1;
-		for (Object obj : list)
-			table[index++ - 1][0] = obj;
-		return table;
-	}
-*/
 	// returns the data from a cell
 	public String getCellData(String sheetName, int colNum, int rowNum) {
 		try {

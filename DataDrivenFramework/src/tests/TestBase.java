@@ -47,15 +47,9 @@ public class TestBase {
 			return null;
 		}
 	}
-	public static void main(String [] args) throws IOException
+	/*public static void main(String [] args) throws IOException
 	{
-/*
-  		login-user-name = 	//*[@id='login-username']
-		login-password =		//*[@id='login-password']
-		login-checkbox = 		//*[@id='login-remember-label']
-		login-butt =		//*[@id='form-login']/span[1]/a
-*/
-		
+
 		//WebDriver driver = new FirefoxDriver();
 		TestBase tb = new TestBase();
 		tb.initialize();
@@ -73,6 +67,6 @@ public class TestBase {
 		driver.findElement(By.xpath("//*[@id='login-remember-label']")).click();
 
 		System.out.println("Success.. Byebye!!");
-	}
+	}*/
 
 }

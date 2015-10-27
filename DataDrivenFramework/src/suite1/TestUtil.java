@@ -9,7 +9,15 @@ public class TestUtil extends TestBase{
 		if(isLoggedIn)
 		{
 			return;
-		}
+		}			
+	}
+	public static void Logout()
+	{
+//		if(isLoggedIn)
+//			getObject("").click();
+	}
+	public static void isSkip(String testCase)
+	{
 		
 	}
 
