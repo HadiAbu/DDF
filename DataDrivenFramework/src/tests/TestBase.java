@@ -12,13 +12,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
+import DataTable.XLS_Reader;
+
 public class TestBase {
 
 	public static Properties CONFIG = null;
 	public static WebDriver driver = null;
 	public static EventFiringWebDriver evDriver = null;
 	public static boolean isLoggedIn=false;
-
+	public static XLS_Reader execlReader=null;
+	
 	public void initialize() throws IOException {
 		if (evDriver == null) {
 			CONFIG = new Properties();
@@ -33,7 +36,17 @@ public class TestBase {
 			evDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 		else
-			System.out.println("Already initialized!");
+			System.out.println("Event Webdriver - Already initialized!");
+		if(execlReader == null)
+		{
+			XLS_Reader dataTable = 
+					new XLS_Reader(
+					"C:\\Users\\Galil1\\Desktop\\eclipse\\tempGit"
+					+ "\\MonkeyFiles\\monkey.xlsx");
+		}
+		else
+			System.out.println("Excel reader - Already initialized!");
+		
 	}
 	
 	public static WebElement getObject(String xpath)
